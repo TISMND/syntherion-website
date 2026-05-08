@@ -1,0 +1,23 @@
+<header class="hero">
+  {% if site.hero.videoUrl %}
+  <video class="hero__video" autoplay muted loop playsinline poster="{{ site.hero.posterUrl }}">
+    <source src="{{ site.hero.videoUrl }}" type="video/mp4">
+  </video>
+  {% else %}
+  <div class="hero__video hero__video--placeholder" aria-hidden="true"></div>
+  {% endif %}
+
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__sun" aria-hidden="true"></div>
+  <div class="hero__vignette" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <img class="hero__title" src="/assets/title.png" alt="{{ site.title }}">
+    <p class="hero__tagline">{{ site.tagline }}</p>
+    <a class="btn btn--steam" href="{{ site.social.steamWishlist }}" rel="noopener">
+      <span class="btn__label">Wishlist on Steam</span>
+      <span class="btn__sub">Release TBA</span>
+    </a>
+    <a class="hero__scroll" href="#pitch" aria-label="Scroll to features">▼</a>
+  </div>
+</header>

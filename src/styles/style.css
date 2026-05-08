@@ -366,3 +366,12 @@ a:hover { color: var(--pink); }
   .hero__title, .hero__grid, .hero__scroll { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* fallback visual when site.hero.videoUrl is unset (R2 not wired yet) */
+.hero__video--placeholder {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(255, 64, 200, 0.18), transparent 60%),
+    linear-gradient(180deg, #1a0533 0%, #0a0420 60%);
+}

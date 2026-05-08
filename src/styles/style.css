@@ -611,3 +611,65 @@ body { padding-bottom: 3.5rem; }
   text-decoration: none;
 }
 .btn--ghost:hover { background: rgba(102, 240, 255, 0.12); }
+
+.section--callout { padding: 4rem 1.5rem; }
+.callout-grid {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 720px) {
+  .callout-grid { grid-template-columns: 1fr; }
+}
+
+.callout {
+  padding: 2rem;
+  background: rgba(20, 8, 50, 0.6);
+  border: 1px solid rgba(255, 102, 196, 0.25);
+}
+
+.callout__title,
+.newsletter__label {
+  display: block;
+  font: 700 1.4rem/1.2 "Orbitron", monospace;
+  color: #ffd6f5;
+  margin: 0 0 0.4rem;
+}
+.callout__sub,
+.newsletter__sub {
+  font-size: 0.95rem;
+  color: rgba(255, 214, 245, 0.7);
+  margin: 0 0 1.2rem;
+}
+
+.newsletter__row {
+  display: flex;
+  gap: 0.5rem;
+}
+.newsletter__input {
+  flex: 1;
+  font: 500 0.95rem/1 "JetBrains Mono", ui-monospace, monospace;
+  padding: 0.7em 0.9em;
+  background: rgba(10, 4, 32, 0.8);
+  border: 1px solid rgba(255, 102, 196, 0.4);
+  color: #ffd6f5;
+}
+.newsletter__input:focus { outline: none; border-color: #ff66c4; }
+
+.newsletter__btn,
+.btn--discord {
+  font: 600 0.85rem/1 "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.85em 1.2em;
+  background: rgba(255, 102, 196, 0.18);
+  color: #ff66c4;
+  border: 1px solid #ff66c4;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+.newsletter__btn:hover,
+.btn--discord:hover { background: rgba(255, 102, 196, 0.3); }

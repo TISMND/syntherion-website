@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+title: Drafts (local only)
+---
+
+<main class="devlog-page">
+  <header class="devlog-page__header">
+    <h1 class="section__heading">Drafts</h1>
+    <p class="devlog-page__subtitle">Posts where <code>published: true</code> is not set. Visible only in <code>npm run dev</code>.</p>
+  </header>
+
+  <div class="post-grid">
+    {% set hasDrafts = false %}
+    {% for post in collections.all %}
+      {% if post.data.tags and "posts" in post.data.tags and not post.data.published %}
+        {% set hasDrafts = true %}
+        <div class="post-grid__item">
+          {% include "partials/post-card.njk" %}
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% if not hasDrafts %}
+    <p class="devlog-page__empty">No drafts. (Check that posts you expect to see do <em>not</em> have <code>published: true</code> in their frontmatter.)</p>
+    {% endif %}
+  </div>
+</main>

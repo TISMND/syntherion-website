@@ -42,6 +42,15 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("limit", (arr, n) => Array.isArray(arr) ? arr.slice(0, n) : arr);
 
+  // isDevMode global — true in `--serve`/`--watch` modes, or when
+  // ELEVENTY_INCLUDE_DRAFTS=true is set. Mirrors src/posts/posts.11tydata.js.
+  // Computed at config-load time so the template sees a boolean, not a function.
+  eleventyConfig.addGlobalData("isDevMode",
+    process.env.ELEVENTY_RUN_MODE === "serve" ||
+    process.env.ELEVENTY_RUN_MODE === "watch" ||
+    process.env.ELEVENTY_INCLUDE_DRAFTS === "true"
+  );
+
   return {
     dir: {
       input: "src",

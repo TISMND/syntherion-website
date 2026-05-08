@@ -423,3 +423,88 @@ body { padding-bottom: 3.5rem; }
 @media (max-width: 480px) {
   .sticky-cta__btn { font-size: 0.78rem; padding: 0.7em 0.5em; }
 }
+
+.post {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.post__back {
+  display: inline-block;
+  font: 500 0.85rem/1 "JetBrains Mono", ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #66f0ff;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+.post__back:hover { color: #ff66c4; }
+
+.post__type {
+  display: inline-block;
+  font: 600 0.7rem/1 "JetBrains Mono", ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.35em 0.7em;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+.post__type--origins { color: #ffb84d; }
+.post__type--tools   { color: #ff66c4; }
+.post__type--devlog  { color: #66f0ff; }
+
+.post__title {
+  font: 700 2.4rem/1.15 "Orbitron", "JetBrains Mono", monospace;
+  margin: 0.4rem 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.post__meta {
+  font: 500 0.85rem/1 "JetBrains Mono", ui-monospace, monospace;
+  color: rgba(255, 214, 245, 0.6);
+  letter-spacing: 0.05em;
+}
+.post__originally { font-style: italic; }
+
+.post__cover { margin: 2rem 0; }
+.post__cover img {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 102, 196, 0.4);
+  box-shadow: 0 0 24px rgba(255, 102, 196, 0.15);
+}
+
+.post__body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #ffd6f5;
+}
+.post__body p { margin: 1.2em 0; }
+.post__body h2 {
+  font: 700 1.5rem/1.2 "Orbitron", monospace;
+  color: #66f0ff;
+  margin: 2.2em 0 0.6em;
+}
+.post__body h3 {
+  font: 600 1.15rem/1.2 "Orbitron", monospace;
+  color: #ff66c4;
+  margin: 1.8em 0 0.5em;
+}
+.post__body img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5em 0;
+  border: 1px solid rgba(255, 102, 196, 0.3);
+}
+.post__body a { color: #66f0ff; }
+.post__body a:hover { color: #ff66c4; }
+.post__body code {
+  font: 0.92em "JetBrains Mono", ui-monospace, monospace;
+  background: rgba(255, 102, 196, 0.1);
+  padding: 0.15em 0.35em;
+  border-radius: 2px;
+}
+
+.post__footer { margin-top: 4rem; }

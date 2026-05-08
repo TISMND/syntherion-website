@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="post">
+  <header class="post__header">
+    <a class="post__back" href="/devlog/">← All transmissions</a>
+    <span class="post__type post__type--{{ postType }}">{{ postType }}</span>
+    <h1 class="post__title">{{ title }}</h1>
+    <p class="post__meta">
+      <time datetime="{{ page.date | date('yyyy-MM-dd') }}">{{ page.date | readableDate }}</time>
+      {% if originallyBuilt %}
+      <span class="post__originally"> · originally built {{ originallyBuilt }}</span>
+      {% endif %}
+    </p>
+    {% if cover %}
+    <figure class="post__cover">
+      <img src="{{ cover }}" alt="{{ coverAlt or title }}">
+    </figure>
+    {% endif %}
+  </header>
+
+  <div class="post__body">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post__footer">
+    {% include "partials/buttondown.njk" ignore missing %}
+    <a class="post__back" href="/devlog/">← All transmissions</a>
+  </footer>
+</article>

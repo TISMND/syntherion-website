@@ -1,10 +1,40 @@
 module.exports = function(eleventyConfig) {
-  // Pass-through copy: styles and any per-post / hero assets
   eleventyConfig.addPassthroughCopy({ "src/styles": "styles" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-
-  // Preserve CNAME at output root
   eleventyConfig.addPassthroughCopy("CNAME");
+
+  // All posts (already filtered by published flag in posts.11tydata.js)
+  eleventyConfig.addCollection("posts", (collectionApi) => {
+    return collectionApi
+      .getFilteredByTag("posts")
+      .sort((a, b) => b.date - a.date);
+  });
+
+  // Subset collections per type
+  for (const type of ["origins", "tools", "devlog"]) {
+    eleventyConfig.addCollection(type, (collectionApi) => {
+      return collectionApi
+        .getFilteredByTag("posts")
+        .filter(p => p.data.postType === type)
+        .sort((a, b) => b.date - a.date);
+    });
+  }
+
+  // readableDate filter for templates
+  eleventyConfig.addFilter("readableDate", (d) => {
+    return new Date(d).toLocaleDateString("en-US", {
+      year: "numeric", month: "long", day: "numeric"
+    });
+  });
+
+  // date filter — Eleventy 3.x doesn't bundle one. Only yyyy-MM-dd is needed.
+  eleventyConfig.addFilter("date", (d, format) => {
+    const dt = new Date(d);
+    if (format === "yyyy-MM-dd") {
+      return dt.toISOString().slice(0, 10);
+    }
+    return dt.toISOString();
+  });
 
   return {
     dir: {

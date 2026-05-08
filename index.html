@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SYNTHERION — Play the music. Fire the beat.</title>
+<meta name="description" content="SYNTHERION is a synthwave bullet-hell shooter where every weapon is a loop and every run is a song. Built in Godot.">
+<meta name="theme-color" content="#0a0420">
+
+<meta property="og:title" content="SYNTHERION">
+<meta property="og:description" content="Play the music. Fire the beat. A synthwave vertical shooter where weapons are loops.">
+<meta property="og:image" content="https://syntheriongame.com/assets/og.jpg">
+<meta property="og:url" content="https://syntheriongame.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="video" href="assets/hero.mp4" type="video/mp4">
+<link rel="preload" as="image" href="assets/title.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="crt" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="hero">
+  <video class="hero__video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+    <source src="assets/hero.webm" type="video/webm">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__sun" aria-hidden="true"></div>
+  <div class="hero__vignette" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <img class="hero__title" src="assets/title.png" alt="SYNTHERION">
+    <p class="hero__tagline">Play the music. Fire the beat.</p>
+    <a class="btn btn--steam" href="#" rel="noopener">
+      <span class="btn__label">Wishlist on Steam</span>
+      <span class="btn__sub">Release TBA</span>
+    </a>
+    <a class="hero__scroll" href="#pitch" aria-label="Scroll to features">▼</a>
+  </div>
+</header>
+
+<main>
+
+<section id="pitch" class="section section--pitch">
+  <p class="pitch">
+    A Tyrian-style vertical shooter where <em>every weapon is an audio loop</em>.
+    Fire on the grid, layer the sound, and your run becomes a track.
+  </p>
+  <ul class="features">
+    <li>
+      <h3>Beat-Synced Weapons</h3>
+      <p>Each gun fires on a beat division. Stack loadouts to compose your own synthwave arrangement mid-fight.</p>
+    </li>
+    <li>
+      <h3>Roguelike Runs</h3>
+      <p>Procedural sectors, permadeath, meta-progression. Every attempt a new B-side.</p>
+    </li>
+    <li>
+      <h3>Co-op (Planned)</h3>
+      <p>Two-player couch and online. Duets in enemy airspace.</p>
+    </li>
+    <li>
+      <h3>Original Soundtrack</h3>
+      <p>A full analog-flavored score by synth heads who grew up on Tyrian and Raptor.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="section section--shots">
+  <h2 class="section__heading">Transmissions</h2>
+  <div class="shots">
+    <figure><img loading="lazy" src="assets/shot1.jpg" alt="Gameplay screenshot 1"></figure>
+    <figure><img loading="lazy" src="assets/shot2.jpg" alt="Gameplay screenshot 2"></figure>
+    <figure><img loading="lazy" src="assets/shot3.jpg" alt="Gameplay screenshot 3"></figure>
+    <figure><img loading="lazy" src="assets/shot4.jpg" alt="Gameplay screenshot 4"></figure>
+  </div>
+</section>
+
+<section class="section section--devlog">
+  <h2 class="section__heading">Devlog</h2>
+  <ol class="devlog">
+    <li>
+      <time datetime="2026-04-01">04.01.2026</time>
+      <h3>Signal Acquired</h3>
+      <p>First public glimpse. Beat-grid firing system is locked in; next up, the boss chorus.</p>
+    </li>
+    <li>
+      <time datetime="2026-03-15">03.15.2026</time>
+      <h3>Loop Architecture</h3>
+      <p>Weapon audio pipeline now renders stems on demand — every shot lands exactly on the bar.</p>
+    </li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__links">
+    <a href="#" rel="noopener">Steam</a>
+    <a href="#" rel="noopener">Discord</a>
+    <a href="mailto:hello@syntheriongame.com">hello@syntheriongame.com</a>
+  </div>
+  <p class="footer__copy">© 2026 SYNTHERION. Built in Godot. Composed in neon.</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

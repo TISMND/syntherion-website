@@ -375,3 +375,51 @@ a:hover { color: var(--pink); }
     radial-gradient(ellipse at center, rgba(255, 64, 200, 0.18), transparent 60%),
     linear-gradient(180deg, #1a0533 0%, #0a0420 60%);
 }
+
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  background: rgba(10, 4, 32, 0.92);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 64, 200, 0.4);
+  box-shadow: 0 -8px 32px rgba(255, 64, 200, 0.12);
+}
+
+.sticky-cta__btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.85em 1em;
+  font: 600 0.95rem/1 "JetBrains Mono", ui-monospace, monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffd6f5;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sticky-cta__btn--steam        { color: #66f0ff; }
+.sticky-cta__btn--steam:hover  { background: rgba(102, 240, 255, 0.12); }
+.sticky-cta__btn--discord      { color: #ff66c4; }
+.sticky-cta__btn--discord:hover{ background: rgba(255, 102, 196, 0.12); }
+
+.sticky-cta__btn + .sticky-cta__btn {
+  border-left: 1px solid rgba(255, 64, 200, 0.25);
+}
+
+.sticky-cta__icon  { font-size: 1.1em; opacity: 0.9; }
+.sticky-cta__arrow { transition: transform 0.15s ease; }
+.sticky-cta__btn:hover .sticky-cta__arrow { transform: translateX(3px); }
+
+/* prevent footer/content from being obscured by sticky bar */
+body { padding-bottom: 3.5rem; }
+
+@media (max-width: 480px) {
+  .sticky-cta__btn { font-size: 0.78rem; padding: 0.7em 0.5em; }
+}

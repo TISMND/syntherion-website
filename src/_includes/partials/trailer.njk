@@ -1,0 +1,14 @@
+{% if site.hero.youtubeTrailerId %}
+<section class="section section--trailer" id="trailer">
+  <h2 class="section__heading">Watch the trailer</h2>
+  <div class="trailer-frame">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ site.hero.youtubeTrailerId }}?rel=0&modestbranding=1"
+      title="SYNTHERION trailer"
+      frameborder="0"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy"></iframe>
+  </div>
+</section>
+{% endif %}

@@ -36,6 +36,8 @@ module.exports = function(eleventyConfig) {
     return dt.toISOString();
   });
 
+  eleventyConfig.addFilter("limit", (arr, n) => Array.isArray(arr) ? arr.slice(0, n) : arr);
+
   return {
     dir: {
       input: "src",

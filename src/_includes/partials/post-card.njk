@@ -1,0 +1,19 @@
+<article class="post-card">
+  <a class="post-card__link" href="{{ post.url }}">
+    {% if post.data.cover %}
+    <figure class="post-card__cover">
+      <img src="{{ post.data.cover }}" alt="{{ post.data.coverAlt or post.data.title }}" loading="lazy">
+    </figure>
+    {% endif %}
+    <div class="post-card__body">
+      <span class="post-card__type post-card__type--{{ post.data.postType }}">{{ post.data.postType }}</span>
+      <h3 class="post-card__title">{{ post.data.title }}</h3>
+      <p class="post-card__meta">
+        <time datetime="{{ post.date | date('yyyy-MM-dd') }}">{{ post.date | readableDate }}</time>
+      </p>
+      {% if post.data.excerpt %}
+      <p class="post-card__excerpt">{{ post.data.excerpt }}</p>
+      {% endif %}
+    </div>
+  </a>
+</article>

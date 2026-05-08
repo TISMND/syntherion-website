@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+title: Devlog
+description: "Building SYNTHERION in public — origins stories, in-game dev tools, and ongoing work."
+permalink: /devlog/
+---
+
+<main class="devlog-page">
+  <header class="devlog-page__header">
+    <h1 class="section__heading">Transmissions</h1>
+    <p class="devlog-page__subtitle">Building SYNTHERION in public — origins, dev tools, and ongoing work.</p>
+
+    <nav class="devlog-page__filters" aria-label="Filter by type">
+      <a class="devlog-page__filter devlog-page__filter--all" href="#all" data-filter="all">All</a>
+      <a class="devlog-page__filter devlog-page__filter--origins" href="#origins" data-filter="origins">Origins</a>
+      <a class="devlog-page__filter devlog-page__filter--tools" href="#tools" data-filter="tools">Tools</a>
+      <a class="devlog-page__filter devlog-page__filter--devlog" href="#devlog" data-filter="devlog">Devlog</a>
+    </nav>
+  </header>
+
+  <div class="post-grid">
+    {% for post in collections.posts %}
+      {% set post = post %}
+      <div class="post-grid__item" data-type="{{ post.data.postType }}">
+        {% include "partials/post-card.njk" %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if collections.posts.length === 0 %}
+  <p class="devlog-page__empty">No transmissions yet. Check back soon.</p>
+  {% endif %}
+</main>
+
+<script>
+(function() {
+  const filters = document.querySelectorAll(".devlog-page__filter");
+  const items = document.querySelectorAll(".post-grid__item");
+  function applyFilter(name) {
+    filters.forEach(f => f.classList.toggle("is-active", f.dataset.filter === name));
+    items.forEach(el => {
+      el.style.display = (name === "all" || el.dataset.type === name) ? "" : "none";
+    });
+  }
+  filters.forEach(f => {
+    f.addEventListener("click", (e) => { e.preventDefault(); applyFilter(f.dataset.filter); history.replaceState(null,"",f.getAttribute("href")); });
+  });
+  // Initialize from hash if present
+  const initial = (location.hash || "#all").slice(1);
+  applyFilter(["all","origins","tools","devlog"].includes(initial) ? initial : "all");
+})();
+</script>

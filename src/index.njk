@@ -43,7 +43,20 @@ description: "SYNTHERION is a synthwave bullet-hell shooter where every weapon i
   </div>
 </section>
 
-{# Latest Transmissions (devlog cards) — added in Task 6 #}
+<section class="section section--latest">
+  <h2 class="section__heading">Latest Transmissions</h2>
+  <div class="post-grid post-grid--latest">
+    {% for post in collections.posts | limit(3) %}
+      {% set post = post %}
+      <div class="post-grid__item">
+        {% include "partials/post-card.njk" %}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="section__more">
+    <a class="btn btn--ghost" href="/devlog/">→ All transmissions</a>
+  </div>
+</section>
 {# Watch trailer modal — added in Task 12 #}
 {# Stay-in-the-loop callout — added in Task 9 #}
 

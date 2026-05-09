@@ -5,14 +5,14 @@ module.exports = {
   url: "https://syntheriongame.com",
   author: "Tim Attewell",
   social: {
-    steamWishlist: "#steam-tba",        // ASK TIM
-    discordInvite: "#discord-tba",      // ASK TIM
+    steamWishlist: "https://store.steampowered.com/app/4622980/Syntherion/",
+    discordInvite: "https://discord.gg/HdbhtS3hsg",
     contactEmail: "hello@syntheriongame.com"
   },
   hero: {
-    videoUrl: "",                       // ASK TIM (R2 URL, set in Task 11)
+    videoUrl: "https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/web-hero-banner.mp4",
     posterUrl: "/assets/hero/poster.jpg",
-    youtubeTrailerId: ""                // ASK TIM (full trailer YT id, Task 12)
+    youtubeTrailerId: "l-K-rIV-YDU"
   },
   buttondown: {
     formAction: ""                      // ASK TIM (Task 9)

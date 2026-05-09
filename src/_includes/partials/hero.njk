@@ -7,17 +7,15 @@
   <div class="hero__video hero__video--placeholder" aria-hidden="true"></div>
   {% endif %}
 
-  <div class="hero__grid" aria-hidden="true"></div>
-  <div class="hero__sun" aria-hidden="true"></div>
   <div class="hero__vignette" aria-hidden="true"></div>
 
   <div class="hero__content">
-    <img class="hero__title" src="/assets/title.png" alt="{{ site.title }}">
-    <p class="hero__tagline">{{ site.tagline }}</p>
-    <a class="btn btn--steam" href="{{ site.social.steamWishlist }}" rel="noopener">
-      <span class="btn__label">Wishlist on Steam</span>
-      <span class="btn__sub">Release TBA</span>
-    </a>
+    <h1 class="visually-hidden">{{ site.title }}</h1>
+    <div class="hero__ctas">
+      <a class="btn-wire" href="{{ site.social.steamWishlist }}" rel="noopener">Wishlist on Steam</a>
+      <a class="btn-wire" href="{{ site.social.discordInvite }}" rel="noopener">Join the Discord</a>
+      <a class="btn-wire" href="/devlog/">Read the Devlogs</a>
+    </div>
     <a class="hero__scroll" href="#pitch" aria-label="Scroll to features">▼</a>
   </div>
 </header>

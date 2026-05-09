@@ -33,16 +33,7 @@ description: "SYNTHERION is a synthwave bullet-hell shooter where every weapon i
   </ul>
 </section>
 
-<section class="section section--shots">
-  <h2 class="section__heading">Transmissions</h2>
-  <div class="shots">
-    <figure><img loading="lazy" src="/assets/shot1.jpg" alt="Gameplay screenshot 1"></figure>
-    <figure><img loading="lazy" src="/assets/shot2.jpg" alt="Gameplay screenshot 2"></figure>
-    <figure><img loading="lazy" src="/assets/shot3.jpg" alt="Gameplay screenshot 3"></figure>
-    <figure><img loading="lazy" src="/assets/shot4.jpg" alt="Gameplay screenshot 4"></figure>
-  </div>
-</section>
-
+{% if collections.posts | length %}
 <section class="section section--latest">
   <h2 class="section__heading">Latest Transmissions</h2>
   <div class="post-grid post-grid--latest">
@@ -57,18 +48,8 @@ description: "SYNTHERION is a synthwave bullet-hell shooter where every weapon i
     <a class="btn btn--ghost" href="/devlog/">→ All transmissions</a>
   </div>
 </section>
+{% endif %}
+
 {% include "partials/trailer.njk" %}
-<section class="section section--callout">
-  <div class="callout-grid">
-    <div class="callout">
-      {% include "partials/buttondown.njk" %}
-    </div>
-    <div class="callout callout--discord">
-      <h3 class="callout__title">Help shape the game</h3>
-      <p class="callout__sub">Real input from players showing up early. Bug reports, feature requests, balance gripes — they all land.</p>
-      <a class="btn btn--discord" href="{{ site.social.discordInvite }}" rel="noopener">Join the Discord →</a>
-    </div>
-  </div>
-</section>
 
 </main>

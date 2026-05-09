@@ -6,8 +6,7 @@ module.exports = {
   author: "Tim Attewell",
   social: {
     steamWishlist: "https://store.steampowered.com/app/4622980/Syntherion/",
-    discordInvite: "https://discord.gg/HdbhtS3hsg",
-    contactEmail: "hello@syntheriongame.com"
+    discordInvite: "https://discord.gg/HdbhtS3hsg"
   },
   hero: {
     videoUrl: "https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/web-hero-banner.mp4",

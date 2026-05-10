@@ -3,7 +3,7 @@ title: "Did you use AI?"
 postTypes: [origins, tools]
 date: 2026-05-09
 order: 2
-published: false
+published: true
 cover: /assets/posts/2026-05-09-did-you-use-ai/claude-code-diff.png
 coverAlt: "A Claude Code terminal session showing a diff: three lines of a code comment removed in red, three lines added in green, with the surrounding JavaScript visible above and below."
 ---

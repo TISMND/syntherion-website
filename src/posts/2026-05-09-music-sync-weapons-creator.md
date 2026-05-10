@@ -3,7 +3,7 @@ title: "Building Music-Based Weapons"
 postType: tools
 date: 2026-05-09
 order: 4
-published: false
+published: true
 cover: /assets/posts/2026-05-09-music-sync-weapons-creator/weapons-creator-waveform.png
 coverAlt: "The weapons creator with the Laser Turret loaded. A waveform fills the upper half of the screen, with red trigger markers placed along it. Snap controls (1/4, 1/8, 1/16, 1/32) sit below."
 ---

@@ -3,7 +3,7 @@ title: "Just ONE post about the developer"
 postType: origins
 date: 2026-05-09
 order: 1
-published: false
+published: true
 cover: /assets/posts/2026-05-09-just-one-post-about-the-developer/cover.png
 coverAlt: "An in-game view labeled HAVEN VERSE: a glowing pale-blue spherical structure on the left tagged 'LANDING PAD 1, APPROACH TO DOCK' against a starfield, with a ship's cockpit HUD on the right showing six numbered hexagonal panels."
 ---

@@ -3,7 +3,7 @@ title: "Splice saved the game"
 postType: origins
 date: 2026-05-09
 order: 3
-published: false
+published: true
 cover: /assets/posts/2026-05-09-splice-saved-the-game/splice-stacks-card.png
 coverAlt: "Three rows from the Splice mobile Stacks view — a yellow DRUMS loop, a purple BASS loop, and a pink SYNTH loop, each with a small album-art thumbnail."
 ---

@@ -2,3 +2,6 @@ node_modules/
 _site/
 .DS_Store
 *.log
+
+# Tim's private first drafts — local only
+docs/tims-raw-blogging/

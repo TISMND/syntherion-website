@@ -2,30 +2,60 @@
 layout: layouts/base.njk
 ---
 
-<article class="post">
-  <header class="post__header">
-    <a class="post__back" href="/devlog/">← All transmissions</a>
-    <span class="post__type post__type--{{ postType }}">{{ postType }}</span>
-    <h1 class="post__title">{{ title }}</h1>
-    <p class="post__meta">
-      <time datetime="{{ page.date | date('yyyy-MM-dd') }}">{{ page.date | readableDate }}</time>
-      {% if originallyBuilt %}
-      <span class="post__originally"> · originally built {{ originallyBuilt }}</span>
+{% include "partials/site-header.njk" %}
+
+<div class="post-stage">
+  <article class="post">
+    <header class="post__header">
+      <a class="post__back" href="/devlog/">← All transmissions</a>
+      {% set types = postTypes if postTypes else [postType] %}
+      <span class="post__types">
+      {% for t in types %}<span class="post__type post__type--{{ t }}">{{ t }}</span>{% endfor %}
+      </span>
+      <h1 class="post__title">{{ title }}</h1>
+      <p class="post__meta">
+        <time datetime="{{ page.date | date('yyyy-MM-dd') }}">{{ page.date | readableDate }}</time>
+        {% if originallyBuilt %}
+        <span class="post__originally"> · originally built {{ originallyBuilt }}</span>
+        {% endif %}
+      </p>
+      {% if cover %}
+      <figure class="post__cover">
+        <img src="{{ cover }}" alt="{{ coverAlt or title }}">
+      </figure>
       {% endif %}
-    </p>
-    {% if cover %}
-    <figure class="post__cover">
-      <img src="{{ cover }}" alt="{{ coverAlt or title }}">
-    </figure>
+    </header>
+
+    <div class="post__body">
+      {{ content | safe }}
+    </div>
+
+    {% set olderPost = collections.posts | getNextCollectionItem(page) %}
+    {% set newerPost = collections.posts | getPreviousCollectionItem(page) %}
+    {% if olderPost or newerPost %}
+    <nav class="post-nav" aria-label="Adjacent transmissions">
+      {% if olderPost %}
+      <a class="post-nav__item post-nav__item--older" href="{{ olderPost.url }}">
+        <span class="post-nav__direction">← Older transmission</span>
+        <span class="post-nav__title">{{ olderPost.data.title }}</span>
+      </a>
+      {% else %}
+      <span class="post-nav__item post-nav__item--placeholder"></span>
+      {% endif %}
+      {% if newerPost %}
+      <a class="post-nav__item post-nav__item--newer" href="{{ newerPost.url }}">
+        <span class="post-nav__direction">Newer transmission →</span>
+        <span class="post-nav__title">{{ newerPost.data.title }}</span>
+      </a>
+      {% else %}
+      <span class="post-nav__item post-nav__item--placeholder"></span>
+      {% endif %}
+    </nav>
     {% endif %}
-  </header>
 
-  <div class="post__body">
-    {{ content | safe }}
-  </div>
-
-  <footer class="post__footer">
-    {% include "partials/buttondown.njk" ignore missing %}
-    <a class="post__back" href="/devlog/">← All transmissions</a>
-  </footer>
-</article>
+    <footer class="post__footer">
+      {% include "partials/buttondown.njk" ignore missing %}
+      <a class="post__back" href="/devlog/">← All transmissions</a>
+    </footer>
+  </article>
+</div>

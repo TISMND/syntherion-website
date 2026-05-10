@@ -7,11 +7,22 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy("CNAME");
 
+  // Posts are sorted newest-first by date. When two posts share a date
+  // (e.g. a one-shot drafting session), the optional `order` frontmatter
+  // field acts as a tiebreaker. LOWER `order` means EARLIER in the intended
+  // reading sequence. The collection sorts descending, so posts with a
+  // higher `order` value end up first in the array.
+  const sortPosts = (a, b) => {
+    const dateDiff = b.date - a.date;
+    if (dateDiff !== 0) return dateDiff;
+    const aOrder = a.data.order ?? 0;
+    const bOrder = b.data.order ?? 0;
+    return bOrder - aOrder;
+  };
+
   // All posts (already filtered by published flag in posts.11tydata.js)
   eleventyConfig.addCollection("posts", (collectionApi) => {
-    return collectionApi
-      .getFilteredByTag("posts")
-      .sort((a, b) => b.date - a.date);
+    return collectionApi.getFilteredByTag("posts").sort(sortPosts);
   });
 
   // Subset collections per type
@@ -20,7 +31,7 @@ module.exports = function(eleventyConfig) {
       return collectionApi
         .getFilteredByTag("posts")
         .filter(p => p.data.postType === type)
-        .sort((a, b) => b.date - a.date);
+        .sort(sortPosts);
     });
   }
 

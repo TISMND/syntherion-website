@@ -5,10 +5,18 @@ description: "Building SYNTHERION in public — origins stories, in-game dev too
 permalink: /devlog/
 ---
 
+{% include "partials/site-header.njk" %}
+
 <main class="devlog-page">
   <header class="devlog-page__header">
     <h1 class="section__heading">Transmissions</h1>
-    <p class="devlog-page__subtitle">Building SYNTHERION in public — origins, dev tools, and ongoing work.</p>
+
+    {% set firstPost = collections.posts | last %}
+    {% if firstPost %}
+    <p class="devlog-page__starthere">
+      New here? <a href="{{ firstPost.url }}">Start at the beginning →</a>
+    </p>
+    {% endif %}
 
     <nav class="devlog-page__filters" aria-label="Filter by type">
       <a class="devlog-page__filter devlog-page__filter--all" href="#all" data-filter="all">All</a>
@@ -21,7 +29,8 @@ permalink: /devlog/
   <div class="post-grid">
     {% for post in collections.posts %}
       {% set post = post %}
-      <div class="post-grid__item" data-type="{{ post.data.postType }}">
+      {% set types = post.data.postTypes if post.data.postTypes else [post.data.postType] %}
+      <div class="post-grid__item" data-types="{{ types | join(' ') }}">
         {% include "partials/post-card.njk" %}
       </div>
     {% endfor %}
@@ -39,7 +48,8 @@ permalink: /devlog/
   function applyFilter(name) {
     filters.forEach(f => f.classList.toggle("is-active", f.dataset.filter === name));
     items.forEach(el => {
-      el.style.display = (name === "all" || el.dataset.type === name) ? "" : "none";
+      const types = (el.dataset.types || "").split(/\s+/).filter(Boolean);
+      el.style.display = (name === "all" || types.includes(name)) ? "" : "none";
     });
   }
   filters.forEach(f => {

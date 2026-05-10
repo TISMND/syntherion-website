@@ -401,6 +401,7 @@ a:hover { color: var(--pink); }
   text-shadow: 0 0 8px rgba(38, 243, 255, 0.5);
 }
 .artist-call__body a:hover { color: var(--pink); }
+.artist-call__btn { margin-top: 1.1rem; }
 
 /* shots */
 .shots {
@@ -547,22 +548,200 @@ body { padding-bottom: 3.5rem; }
   .sticky-cta__btn { font-size: 0.78rem; padding: 0.7em 0.5em; }
 }
 
+/* Slim site header on every non-homepage page. Provides the always-available
+   "back to the game site" affordance via the brand link. */
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(180deg, rgba(10, 4, 32, 0.95), rgba(14, 5, 38, 0.85));
+  border-bottom: 1px solid rgba(138, 121, 255, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 10;
+}
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #e8e2ff;
+  font: 700 1rem/1 "Orbitron", "JetBrains Mono", monospace;
+  letter-spacing: 0.18em;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+.site-header__brand:hover {
+  color: #66f0ff;
+  transform: translateX(-2px);
+}
+.site-header__back {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: #ff66c4;
+  transition: transform 0.15s ease;
+}
+.site-header__brand:hover .site-header__back {
+  transform: translateX(-3px);
+}
+.site-header__nav {
+  display: flex;
+  gap: 1.25rem;
+}
+.site-header__link {
+  font: 600 0.85rem/1 "JetBrains Mono", ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9bd6ff;
+  text-decoration: none;
+}
+.site-header__link:hover {
+  color: #ff66c4;
+}
+@media (max-width: 480px) {
+  .site-header { padding: 0.75rem 1rem; }
+  .site-header__brand { font-size: 0.85rem; letter-spacing: 0.14em; }
+  .site-header__link { font-size: 0.75rem; }
+}
+
+/* "Start at the beginning" pointer on the devlog feed. */
+.devlog-page__starthere {
+  margin: 1.25rem 0 2.5rem;
+  text-align: center;
+  font: 500 0.95rem/1.4 "Space Grotesk", system-ui, sans-serif;
+  color: rgba(232, 226, 255, 0.7);
+}
+.devlog-page__starthere a {
+  color: #66f0ff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(102, 240, 255, 0.4);
+  padding-bottom: 1px;
+}
+.devlog-page__starthere a:hover {
+  color: #ff66c4;
+  border-bottom-color: #ff66c4;
+}
+
+/* Prev/next nav at the bottom of each post. Two-up grid that collapses
+   to stacked on narrow screens. */
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 3rem 0 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(138, 121, 255, 0.18);
+}
+.post-nav__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.9rem 1.1rem;
+  background: rgba(20, 8, 42, 0.6);
+  border: 1px solid rgba(138, 121, 255, 0.2);
+  border-radius: 4px;
+  text-decoration: none;
+  color: #e8e2ff;
+  transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+.post-nav__item:hover {
+  border-color: rgba(255, 102, 196, 0.5);
+  background: rgba(28, 14, 56, 0.75);
+  transform: translateY(-1px);
+}
+.post-nav__item--newer {
+  text-align: right;
+}
+.post-nav__item--placeholder {
+  background: transparent;
+  border-color: transparent;
+  pointer-events: none;
+}
+.post-nav__direction {
+  font: 600 0.72rem/1 "JetBrains Mono", ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9bd6ff;
+}
+.post-nav__title {
+  font: 600 1.05rem/1.3 "Orbitron", monospace;
+  color: #ffd9f1;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 600px) {
+  .post-nav { grid-template-columns: 1fr; }
+  .post-nav__item--newer { text-align: left; }
+  .post-nav__item--placeholder { display: none; }
+}
+
+/* The "stage" sits behind every post page: outrun grid receding into a
+   horizon-fade. The post itself becomes a contained card on top of it. */
+.post-stage {
+  position: relative;
+  min-height: 100vh;
+  padding: 4rem 1rem 6rem;
+  background:
+    /* horizon glow at the top */
+    radial-gradient(ellipse 90% 40% at 50% 0%, rgba(255, 102, 196, 0.18), transparent 60%),
+    /* deep base */
+    linear-gradient(180deg, #0d0628 0%, #0a0420 60%, #06031a 100%);
+  isolation: isolate;
+}
+.post-stage::before {
+  /* perspective grid lines, faint, fixed-feeling */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right,  rgba(255, 102, 196, 0.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 102, 196, 0.08) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px;
+  mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 70%, transparent 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
 .post {
-  max-width: 720px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem clamp(1.25rem, 4vw, 2.5rem) 3rem;
+  background:
+    linear-gradient(180deg,
+      rgba(28, 14, 56, 0.92) 0%,
+      rgba(20, 8, 42, 0.94) 50%,
+      rgba(14, 5, 32, 0.96) 100%);
+  border: 1px solid rgba(138, 121, 255, 0.22);
+  border-radius: 6px;
+  box-shadow:
+    0 0 0 1px rgba(255, 102, 196, 0.08),
+    0 24px 60px -20px rgba(0, 0, 0, 0.65),
+    0 0 80px -30px rgba(255, 102, 196, 0.18);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .post__back {
   display: inline-block;
-  font: 500 0.85rem/1 "JetBrains Mono", ui-monospace, monospace;
+  font: 500 0.8rem/1 "JetBrains Mono", ui-monospace, monospace;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #66f0ff;
+  letter-spacing: 0.1em;
+  color: #b0c8e8;
   text-decoration: none;
   margin-bottom: 1.5rem;
+  padding: 0.45em 0.8em;
+  border: 1px solid rgba(176, 200, 232, 0.25);
+  border-radius: 3px;
+  background: rgba(176, 200, 232, 0.05);
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
-.post__back:hover { color: #ff66c4; }
+.post__back:hover {
+  color: #ffb0e5;
+  border-color: rgba(255, 176, 229, 0.5);
+  background: rgba(255, 176, 229, 0.08);
+}
 
 .post__type {
   display: inline-block;
@@ -577,6 +756,8 @@ body { padding-bottom: 3.5rem; }
 .post__type--origins { color: #ffb84d; }
 .post__type--tools   { color: #ff66c4; }
 .post__type--devlog  { color: #66f0ff; }
+.post__types { display: inline-flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.post__types .post__type { margin-bottom: 0; }
 
 .post__title {
   font: 700 2.4rem/1.15 "Orbitron", "JetBrains Mono", monospace;
@@ -602,17 +783,23 @@ body { padding-bottom: 3.5rem; }
 .post__body {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #ffd6f5;
+  /* cooler, eye-friendlier than the previous near-pink #ffd6f5;
+     pink is now reserved for accents and headings, not the prose itself */
+  color: #e8e2ff;
 }
 .post__body p { margin: 1.2em 0; }
 .post__body h2 {
-  font: 700 1.5rem/1.2 "Orbitron", monospace;
-  color: #66f0ff;
-  margin: 2.2em 0 0.6em;
+  font: 700 1.45rem/1.2 "Orbitron", monospace;
+  color: #9bd6ff;
+  letter-spacing: 0.04em;
+  margin: 2.4em 0 0.6em;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid rgba(155, 214, 255, 0.18);
 }
 .post__body h3 {
-  font: 600 1.15rem/1.2 "Orbitron", monospace;
-  color: #ff66c4;
+  font: 600 1.1rem/1.2 "Orbitron", monospace;
+  color: #ffb0e5;
+  letter-spacing: 0.04em;
   margin: 1.8em 0 0.5em;
 }
 .post__body img {
@@ -668,6 +855,8 @@ body { padding-bottom: 3.5rem; }
 .post-card__type--origins { color: #ffb84d; }
 .post-card__type--tools   { color: #ff66c4; }
 .post-card__type--devlog  { color: #66f0ff; }
+.post-card__types { display: inline-flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.7rem; }
+.post-card__types .post-card__type { margin-bottom: 0; }
 .post-card__title {
   font: 600 1.1rem/1.3 "Orbitron", monospace;
   margin: 0 0 0.4rem;
@@ -731,9 +920,18 @@ body { padding-bottom: 3.5rem; }
   padding: 0.85em 1.5em;
   border: 1px solid #66f0ff;
   color: #66f0ff;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
   text-decoration: none;
 }
-.btn--ghost:hover { background: rgba(102, 240, 255, 0.12); }
+.btn--ghost:hover {
+  background: rgba(102, 240, 255, 0.12);
+  color: #66f0ff;
+  box-shadow: none;
+  transform: none;
+  filter: none;
+}
 
 .section--callout { padding: 4rem 1.5rem; }
 .callout-grid {
@@ -813,4 +1011,126 @@ body { padding-bottom: 3.5rem; }
   width: 100%;
   height: 100%;
   display: block;
+}
+
+/* Inline editorial markers visible only in dev/draft mode.
+   Wraps spots where Claude is asking Tim a question inside an unpublished draft.
+   Bright, monospace, hard to miss; never ships because drafts don't deploy. */
+.ask-tim {
+  display: inline-block;
+  background: #ffe066;
+  color: #1a0033;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 0.15em 0.5em;
+  margin: 0.1em 0;
+  border-left: 3px solid #ff66c4;
+  border-radius: 2px;
+  line-height: 1.45;
+}
+.ask-tim::before {
+  content: "ASK TIM ▸ ";
+  color: #ff0080;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Visible placeholder for missing media in drafts. */
+.media-placeholder {
+  display: block;
+  margin: 1.5rem 0;
+  padding: 1.25rem 1rem;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 102, 196, 0.08),
+    rgba(255, 102, 196, 0.08) 10px,
+    rgba(255, 102, 196, 0.16) 10px,
+    rgba(255, 102, 196, 0.16) 20px
+  );
+  border: 2px dashed rgba(255, 102, 196, 0.6);
+  color: #ffb0e5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  text-align: center;
+  border-radius: 4px;
+}
+.media-placeholder::before {
+  content: "🎬 PLACEHOLDER · ";
+  color: #ff66c4;
+  font-weight: 700;
+}
+
+/* Embeds (YouTube, Spotify, etc.) inside post bodies. Centralized so we
+   never copy/paste iframe styling. */
+.embed-yt {
+  display: block;
+  position: relative;
+  margin: 1.75rem 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid rgba(255, 102, 196, 0.35);
+  box-shadow: 0 0 22px rgba(255, 102, 196, 0.12);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.embed-yt iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.embed-spotify {
+  display: block;
+  margin: 1.75rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 18px rgba(38, 243, 255, 0.12);
+}
+.embed-spotify iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+/* figure with caption used for inline screenshots */
+.post__body figure {
+  margin: 1.75rem 0;
+}
+.post__body figure img {
+  margin: 0 0 0.5em;
+}
+.post__body figcaption {
+  font: 500 0.85rem/1.4 "JetBrains Mono", ui-monospace, monospace;
+  color: rgba(232, 226, 255, 0.55);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* Pull quote treatment for breaking up walls of text. */
+.pullquote {
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+  max-width: 38rem;
+  border-left: 4px solid #ff66c4;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  color: #ffd9f1;
+  font-style: italic;
+  text-shadow: 0 0 12px rgba(255, 102, 196, 0.25);
+}
+/* Stronger variant for the post's actual thesis line — used sparingly,
+   max one per post. Slightly larger, cyan accent rule, more glow. */
+.pullquote--thesis {
+  font-size: 1.55rem;
+  border-left-color: #66f0ff;
+  color: #f4ecff;
+  text-shadow: 0 0 18px rgba(102, 240, 255, 0.3);
+  padding: 1.2rem 1.75rem;
+  font-style: normal;
+  letter-spacing: 0.005em;
 }

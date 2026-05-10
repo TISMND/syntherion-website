@@ -6,7 +6,10 @@
     </figure>
     {% endif %}
     <div class="post-card__body">
-      <span class="post-card__type post-card__type--{{ post.data.postType }}">{{ post.data.postType }}</span>
+      {% set types = post.data.postTypes if post.data.postTypes else [post.data.postType] %}
+      <span class="post-card__types">
+      {% for t in types %}<span class="post-card__type post-card__type--{{ t }}">{{ t }}</span>{% endfor %}
+      </span>
       <h3 class="post-card__title">{{ post.data.title }}</h3>
       <p class="post-card__meta">
         <time datetime="{{ post.date | date('yyyy-MM-dd') }}">{{ post.date | readableDate }}</time>

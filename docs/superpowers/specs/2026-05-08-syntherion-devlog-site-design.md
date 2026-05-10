@@ -81,13 +81,27 @@ Existing files (`index.html`, `style.css`, `script.js`) are reference material �
 ### 3.1 Landing page (hybrid)
 Single URL doing both jobs while traffic is low:
 
-1. **Hero** — full-bleed self-hosted muted-loop trailer. Title image, tagline, CTAs (see §3.3).
+1. **Hero** — full-bleed self-hosted muted-loop trailer. Title image, tagline, CTAs (see §3.3). Includes a **"Hear some weapons"** call-out near the hero (see §3.1.1).
 2. **Trimmed pitch** — 1 short paragraph + features (cut down from current page).
 3. **Latest Transmissions** — 3 most-recent published devlog cards.
 4. **"→ All posts"** link to `/devlog`.
 5. **"Watch trailer"** section or modal — YouTube embed of the full trailer with audio.
 6. **"Stay in the loop" callout** — Buttondown email signup (real, wired) + Discord invite, side by side.
 7. **Footer** — Steam, Discord, mailing list, contact email.
+
+#### 3.1.1 "Hear some weapons" CTA *(post-v1; out of scope for initial build)*
+
+A third hero-area video CTA, distinct from #5 above. Clicking opens a 15–30s clip with audio focused tightly on the music-as-weapons hook (player toggling weapons; loops audibly muting/unmuting).
+
+Rationale:
+- More specific and more clickable than a generic "Watch trailer." Promises the one thing that's actually novel about the game.
+- Lower commitment than the full trailer; a skeptical visitor who won't watch 90s will watch 20s.
+- Direct answer to the question synthwave fans care about most: *what does this game sound like?*
+- Doubles as the in-post hero clip for the music-sync weapons creator post (Post 4 in the editorial slate).
+
+Hosting: **Cloudflare R2**, same as the muted hero loop. Reasons: free tier (10 GB storage, zero egress through Cloudflare CDN); no YouTube "watch next" suggestions pulling visitors off-site; no ad / content-ID risk on Splice-licensed audio; full aesthetic control of the player UI to match the synthwave/CRT vibe. YouTube remains the home of the *full* trailer (#5).
+
+Status: deferred until the music-sync clip exists as a captured asset. Implementation when added is a small modal + R2 video tag. No backend.
 
 ### 3.2 Devlog
 - `/devlog` — full archive feed, paginated, filterable by post type (`origins` / `tools` / `devlog`).

@@ -2,6 +2,7 @@
 
 ## Working with Tim
 
+- **Tim usually has the dev server running himself.** Don't offer to start it, and don't start it speculatively to "verify" a change. If you genuinely need it running for a specific check, ask first.
 - **Always use full absolute paths when referencing files.** Tim copy-pastes them into Windows Explorer; relative paths add friction. e.g. write `C:\coding\syntherion-website\content\intake\foo.md`, not `content/intake/foo.md`.
 - **Improvise LANGUAGE, never FACTS.** This is the single most important rule on the project. You can rephrase, restructure, polish tone, pick punchier wording. You CANNOT invent, embellish, or guess at any factual claim about the game, the project, the people, or the infrastructure — even when it sounds plausible, even when it makes the copy better, even when the surrounding paragraph "needs" another bullet. If a fact isn't in Tim's notes, the spec, the codebase, or something Tim told you in this conversation, **you do not have it**. Stop and ask, or leave an `ASK TIM` marker. Examples of facts you must not invent:
   - **Game features and mechanics** (e.g. weapon systems, multiplayer modes, soundtrack genre/scope, number of factions, what's "fully implemented" vs. planned, art style descriptors). If Tim hasn't said it, it doesn't go on the site.
@@ -30,7 +31,7 @@ These apply when drafting *in Tim's voice* (post bodies, anything reader-facing)
 - **No em-dashes.** Ever. Use commas, parentheses, periods, ellipses. Tim does not write with em-dashes and asked me not to add them.
 - **Loose grammar stays.** Trim things that are obviously wrong; leave casual sentence shapes, run-ons, and parentheticals. Tim's voice is "casual, parenthetical, willing to be uncertain mid-sentence."
 - **No bolding inside his prose.** He doesn't bold things; I shouldn't either when ghostwriting him.
-- **Parentheticals and brackets in Tim's raw text are addressed to me, Claude.** They are notes/instructions, not part of the post. Treat them as comments to act on (or ignore where he says use judgment), not as text to publish.
+- **Brackets `[ ]` in Tim's raw text are addressed to me, Claude.** They are notes/instructions, not part of the post — treat them as comments to act on (or ignore where he says use judgment), not as text to publish. **Parentheses `( )` are part of the actual post** — Tim's voice is parenthesis-heavy, preserve them.
 - **His raw writing is "ingredients for the word blender."** I can rearrange, cut, reshape. The order of his thoughts isn't the order of the post. But the *content* of his thoughts is sacred — don't paraphrase his anecdotes, names, references, jokes. Use his phrasing where he gave it.
 - **Don't sanitize the self-deprecation.** He'll write things like "labor of love, but really it was a sign of me being stupid." Keep them. They're voice, not bugs.
 
@@ -57,3 +58,7 @@ When discussing assets in editorial / planning / wishlist contexts, use these te
 This repo is the dev blog site for SYNTHERION (the game). For full project, game, and tooling context, see `C:\coding\syntherion-website\devlog-site-context.md`.
 
 For the site's design/architecture spec, see `C:\coding\syntherion-website\docs\superpowers\specs\2026-05-08-syntherion-devlog-site-design.md`.
+
+## Devblog workflow
+
+**Read this when starting a fresh session that involves drafting or editing posts:** `C:\coding\syntherion-website\docs\editorial\devblog-workflow.md`. It captures the intake → outline → raw writing → draft → published lifecycle, the CSS toolkit available for posts, dev preview commands, and a snapshot of current state. Pair with this CLAUDE.md (rules) — that doc is the workflow.

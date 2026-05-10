@@ -10,6 +10,7 @@ module.exports = {
   },
   hero: {
     videoUrl: "https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/web-hero-banner.mp4",
+    mobileVideoUrl: "https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/mobile-hero-banner.mp4",
     posterUrl: "/assets/hero/poster.jpg",
     youtubeTrailerId: "l-K-rIV-YDU"
   },

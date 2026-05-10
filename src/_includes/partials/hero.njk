@@ -1,6 +1,9 @@
 <header class="hero">
   {% if site.hero.videoUrl %}
   <video class="hero__video" autoplay muted loop playsinline poster="{{ site.hero.posterUrl }}">
+    {% if site.hero.mobileVideoUrl %}
+    <source src="{{ site.hero.mobileVideoUrl }}" type="video/mp4" media="(max-width: 720px) and (orientation: portrait)">
+    {% endif %}
     <source src="{{ site.hero.videoUrl }}" type="video/mp4">
   </video>
   {% else %}

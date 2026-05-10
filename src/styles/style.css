@@ -217,6 +217,12 @@ a:hover { color: var(--pink); }
   .btn-wire { text-align: center; }
 }
 
+/* Portrait mobile: shorten hero so object-fit:cover doesn't scale the wide
+   video up so much, exposing more of the frame horizontally. */
+@media (max-width: 720px) and (orientation: portrait) {
+  .hero { min-height: 60svh; }
+}
+
 @keyframes title-pulse {
   0%, 85%  { filter: drop-shadow(0 0 18px rgba(255,43,214,0.55)) drop-shadow(0 0 42px rgba(38,243,255,0.25)); }
   100%     { filter: drop-shadow(0 0 28px rgba(255,43,214,0.85)) drop-shadow(0 0 68px rgba(38,243,255,0.45)); }

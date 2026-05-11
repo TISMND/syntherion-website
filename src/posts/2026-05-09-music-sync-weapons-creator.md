@@ -44,3 +44,5 @@ I wonder if real devs have this problem.
 ![The same weapons creator with the Stats tab open. Damage, beam DPS, beam fasthrough, beam effects per shot, splash damage settings, enemy damage test, and DPS readouts dominate the right side.](/assets/posts/2026-05-09-music-sync-weapons-creator/weapons-creator-stats.png)
 
 Of all the screens I stare into, this one remains a total playhouse. In the coming posts, I'll get more into things that were Hell on Earth.
+
+-Tim

@@ -61,3 +61,5 @@ When my focus is on writing my own sci-fi books or building board games, as much
 I enjoy creating things "for me," but it's way more fulfilling to make them for others. ...when they actually like it.
 
 Deep down, I'm still a writer at heart. Hence... dev log.
+
+-Tim

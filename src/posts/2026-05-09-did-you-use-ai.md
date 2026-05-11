@@ -75,4 +75,6 @@ If you're playing Syntherion, you're playing a game that I created. I didn't hov
 
 Note, though, that I didn't say "you're playing my game". That's because I honestly hope you'll join the community, and feel like in some ways it's yours too. 
 
+-Tim
+
 

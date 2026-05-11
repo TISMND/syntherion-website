@@ -39,3 +39,5 @@ I have dreams of making in-game environments that trigger key changes and tempo 
 As of this writing, I've made 31 stacks of 8... so 248 tracks to work with. Claude wrote a .py that automatically unzips, renames, and sorts them by instrument. The full stacks don't always sound great, because sometimes I'm looking for variations on something specific. For example, enemies from the verse called "Bioloom" need to have weapons that sound more orchestral. Typically strings. So sometimes I'll get a stack together that sounds nothing like synthwave.
 
 My hope is that, eventually, as much as it's helped, I'll look back on Splice as the early, kickstart days, before I started collaborating directly with synthwave and darkwave artists. Instead of building stacks that serve the utility of bringing me more loops to work with, I'll be able to have artists build complementing sounds that were destined to be together... in space.
+
+-Tim

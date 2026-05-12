@@ -29,14 +29,15 @@ description: "SYNTHERION is a synthwave bullet-hell shooter where every weapon i
   </ul>
 
   <aside class="artist-call">
-    <h3 class="artist-call__title">Synthwave &amp; darksynth artists:</h3>
+    <h3 class="artist-call__title">Synthwave artists:</h3>
     <p class="artist-call__body">
-      If you make music in the scene, I'd love to put your tracks in the game. You'll get a gear
-      pack named after you.
+      Get gear named after you by sending in a synthwave loop.
     </p>
-    <a class="btn--discord artist-call__btn" href="{{ site.social.discordInvite }}" rel="noopener">Come say hi on Discord →</a>
+    <a class="btn--discord artist-call__btn" href="/for-musicians/">Learn more →</a>
   </aside>
 </section>
+
+{% include "partials/trailer.njk" %}
 
 {% if collections.posts | length %}
 <section class="section section--latest">
@@ -54,7 +55,5 @@ description: "SYNTHERION is a synthwave bullet-hell shooter where every weapon i
   </div>
 </section>
 {% endif %}
-
-{% include "partials/trailer.njk" %}
 
 </main>

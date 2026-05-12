@@ -1,0 +1,126 @@
+---
+layout: layouts/base.njk
+title: For Musicians
+description: "Contribute a synthwave loop to SYNTHERION and get a weapon named after you, branded with your album art, and linked to your music in-game."
+permalink: /for-musicians/
+---
+
+{% include "partials/site-header.njk" %}
+
+<main class="musicians-page">
+
+  <header class="musicians-page__header">
+    <h1 class="section__heading">For Musicians</h1>
+    <div class="musicians-pitch-box">
+      <p class="musicians-pitch-box__lead">
+        Get your name, album cover, and Spotify in the game.
+      </p>
+      <p class="musicians-pitch-box__sub">
+        Send me 16-second synthwave DAW stems. I'll build the gear around them.
+      </p>
+    </div>
+  </header>
+
+  <section class="section musicians-flow">
+    <ol class="flow-steps">
+
+      <li class="flow-step flow-step--center">
+        <div class="flow-step__media-col">
+          <div class="flow-step__media">
+            <video autoplay muted loop playsinline preload="metadata"
+                   aria-hidden="true">
+              <source src="/assets/artist-promotion/artist_item_drop.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="flow-step__body">
+          <span class="flow-step__num">01</span>
+          <h3>Your gear drops</h3>
+          <p>A player blows open a loot crate. Something with your name on it falls out.</p>
+        </div>
+      </li>
+
+      <li class="flow-step flow-step--left">
+        <div class="flow-step__media-col">
+          <div class="flow-step__media">
+            <video autoplay muted loop playsinline preload="metadata"
+                   aria-hidden="true">
+              <source src="/assets/artist-promotion/artist_in_inventory.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="flow-step__caption">Note: this is an early UI design that will evolve as development progresses.</p>
+        </div>
+        <div class="flow-step__body">
+          <span class="flow-step__num">02</span>
+          <h3>It lives in their cargo</h3>
+          <p>Sitting in the inventory between runs, branded with your album art.</p>
+        </div>
+      </li>
+
+      <li class="flow-step flow-step--close-up">
+        <div class="flow-step__media-col">
+          <div class="flow-step__media">
+            <video autoplay muted loop playsinline preload="metadata"
+                   aria-hidden="true">
+              <source src="/assets/artist-promotion/artist_inventory_close_up.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="flow-step__body">
+          <span class="flow-step__num">03</span>
+          <h3>One tap to your Spotify</h3>
+          <p>The tile links straight to your Spotify profile. If a player likes the loop, the rest of your work is one tap away.</p>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <section class="section musicians-ask">
+    <h2 class="section__heading">All I ask...</h2>
+    <p>
+      Help me promote the game. A tweet, a story, a word to friends in
+      the scene. Whatever feels natural to you.
+    </p>
+  </section>
+
+  <section class="section musicians-examples">
+    <h2 class="section__heading">Example Deliverables</h2>
+    <div class="musicians-examples__list">
+      <a class="musicians-example"
+         href="https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/thin_addition_stems.zip"
+         download>
+        <span class="musicians-example__label">Example 1</span>
+        <span class="musicians-example__meta">ZIP · ~25 MB</span>
+      </a>
+      <a class="musicians-example"
+         href="https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/blazed_sneakers_stems.zip"
+         download>
+        <span class="musicians-example__label">Example 2</span>
+        <span class="musicians-example__meta">ZIP · ~25 MB</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section musicians-cta">
+    <h2 class="section__heading">Interested?</h2>
+    <p>
+      If we're not already in touch, please find me (Tim) in the Discord server.
+    </p>
+    <a class="btn--discord" href="{{ site.social.discordInvite }}" rel="noopener">Join the Discord →</a>
+  </section>
+
+  <section class="section musicians-tech">
+    <h2 class="section__heading musicians-tech__heading">Technical details</h2>
+    <ul class="musicians-tech__list">
+      <li>DAW stems, delivered as a ZIP.</li>
+      <li>44.1 kHz WAV.</li>
+      <li>120 BPM, 8 bars.</li>
+      <li>Exactly 16 seconds.</li>
+      <li>Key: D# Minor.</li>
+      <li>Mastered to loop seamlessly.</li>
+      <li>The loop itself can be a single bar repeated. Doesn't have to evolve across all 8 bars.</li>
+    </ul>
+  </section>
+
+</main>

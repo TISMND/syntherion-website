@@ -16,14 +16,14 @@ permalink: /for-musicians/
         Get your name, album cover, and Spotify in the game.
       </p>
       <p class="musicians-pitch-box__sub">
-        Create 16-second synthwave DAW stems for the game. I'll build the gear around them.
+        Submit 16-second synthwave DAW layers. I'll build the weapons around them.
       </p>
     </div>
   </header>
 
   <section class="section musicians-intro">
     <p class="musicians-intro__lead"><strong>SYNTHERION is a game where weapons and gear sync to music loops.</strong></p>
-    <p class="musicians-intro__sub">Every loop in the game runs at 120 BPM in D# minor, so they all mix and layer with each other.</p>
+    <p class="musicians-intro__sub">Every layer runs at 120 BPM in D# minor, so they all mix with each other (and with the rest of the game).</p>
     <p class="musicians-intro__sub">It's early in development, which is the best time to get your music in.</p>
   </section>
 
@@ -42,7 +42,7 @@ permalink: /for-musicians/
         </div>
         <div class="flow-step__body">
           <span class="flow-step__num">01</span>
-          <h3>Your gear drops</h3>
+          <h3>Your weapon drops</h3>
           <p>A player blows open a loot crate. Something with your name on it falls out.</p>
         </div>
       </li>
@@ -55,7 +55,6 @@ permalink: /for-musicians/
               <source src="/assets/artist-promotion/artist_in_inventory.mp4" type="video/mp4">
             </video>
           </div>
-          <p class="flow-step__caption">Note: this is an early UI design that will evolve as development progresses.</p>
         </div>
         <div class="flow-step__body">
           <span class="flow-step__num">02</span>
@@ -83,39 +82,59 @@ permalink: /for-musicians/
     </ol>
   </section>
 
-  <section class="section musicians-ask">
-    <h2 class="section__heading">All I ask...</h2>
-    <p>
-      Help me promote the game. A tweet, a story, a word to friends in
-      the scene. Whatever feels natural to you.
-    </p>
+  <section class="section musicians-demo-section">
+    <h2 class="section__heading">Hear a loop in action</h2>
+    <figure class="musicians-demo">
+      <div class="musicians-demo__player" data-state="idle">
+        <video class="musicians-demo__video" controls playsinline preload="metadata">
+          <source src="https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/music_sync_demo.mp4" type="video/mp4">
+        </video>
+        <button class="musicians-demo__play" type="button" aria-label="Play demo with sound">
+          <span class="musicians-demo__play-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <figcaption class="musicians-demo__caption">Hit play with sound on.</figcaption>
+    </figure>
+    <script>
+      (function () {
+        var wrap = document.currentScript.previousElementSibling.querySelector('.musicians-demo__player');
+        if (!wrap) return;
+        var video = wrap.querySelector('video');
+        var btn = wrap.querySelector('.musicians-demo__play');
+        btn.addEventListener('click', function () { video.play(); });
+        video.addEventListener('play', function () { wrap.setAttribute('data-state', 'playing'); });
+      })();
+    </script>
   </section>
 
   <section class="section musicians-examples">
-    <h2 class="section__heading">Download Guide Tracks</h2>
-    <p class="musicians-examples__intro">Everything must match: <span class="spec-value">120 BPM</span>, <span class="spec-value">D# Minor</span>, <span class="spec-value">16 seconds</span>. Drop any tracks from these two stacks into a session with your music to confirm it slots in next to the rest of the game.</p>
+    <h2 class="section__heading">Try it in your DAW</h2>
+    <p class="musicians-examples__intro">Every layer must match: <span class="spec-value">120 BPM</span>, <span class="spec-value">D# Minor</span>, <span class="spec-value">16 seconds</span>, looping seamlessly. Each layer is one isolated instrument. The game pulls submissions apart and recombines them with other artists' work.</p>
+    <p class="musicians-examples__intro">Drop one of these reference stacks into a session with your own layers to hear how they sit next to the rest of the game.</p>
     <div class="musicians-examples__list">
       <a class="musicians-example"
          href="https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/thin_addition_stems.zip"
          download>
-        <span class="musicians-example__label">Example 1</span>
+        <span class="musicians-example__label">Reference stack 1</span>
         <span class="musicians-example__meta">ZIP · ~25 MB</span>
       </a>
       <a class="musicians-example"
          href="https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/blazed_sneakers_stems.zip"
          download>
-        <span class="musicians-example__label">Example 2</span>
+        <span class="musicians-example__label">Reference stack 2</span>
         <span class="musicians-example__meta">ZIP · ~25 MB</span>
       </a>
     </div>
-    <p class="musicians-examples__note">Stacked together they may sound crowded. Each zip contains 8 tracks to show variety. You'll rarely hear that many at once in-game.</p>
-    <p class="musicians-examples__note">Feel free to send 1–6 tracks of your own.</p>
+    <p class="musicians-examples__note">Doesn't need to be original work, though matching 120 BPM in D# minor by accident is rare.</p>
   </section>
 
   <section class="section musicians-cta">
     <h2 class="section__heading">Interested?</h2>
     <p>
-      If we're not already in touch, please find me (Tim) in the Discord server.
+      Help me promote the game in whatever way feels natural (a tweet, a story, a word to friends in the scene). If we're not already in touch, find me (Tim) in the Discord.
+    </p>
+    <p>
+      Acceptance into the game isn't guaranteed, but credit for any used work is.
     </p>
     <a class="btn--discord" href="{{ site.social.discordInvite }}" rel="noopener">Join the Discord →</a>
   </section>
@@ -123,14 +142,10 @@ permalink: /for-musicians/
   <section class="section musicians-tech">
     <h2 class="section__heading musicians-tech__heading">Technical details</h2>
     <ul class="musicians-tech__list">
-      <li>DAW stems, delivered as a ZIP.</li>
-      <li>1–6 tracks per ZIP.</li>
+      <li>DAW layers, delivered as a ZIP.</li>
+      <li>One isolated instrument per layer.</li>
       <li>44.1 kHz WAV.</li>
-      <li>120 BPM, 8 bars.</li>
-      <li>Exactly 16 seconds.</li>
-      <li>Key: D# Minor.</li>
-      <li>Mastered to loop seamlessly.</li>
-      <li>The loop itself can be a single bar repeated. Doesn't have to evolve across all 8 bars.</li>
+      <li>Submit as many layers as you'd like.</li>
     </ul>
   </section>
 

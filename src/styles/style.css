@@ -1265,6 +1265,76 @@ body { padding-bottom: 3.5rem; }
   text-align: center;
 }
 
+.musicians-demo-section .section__heading {
+  text-align: center;
+}
+.musicians-demo {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0;
+}
+.musicians-demo__player {
+  position: relative;
+}
+.musicians-demo__video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  background: #000;
+}
+.musicians-demo__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  border: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s ease, opacity 0.2s ease;
+  padding: 0;
+}
+.musicians-demo__play:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+.musicians-demo__play-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.musicians-demo__play:hover .musicians-demo__play-icon {
+  transform: scale(1.06);
+  background: #fff;
+}
+.musicians-demo__play-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 18px 0 18px 28px;
+  border-color: transparent transparent transparent #111;
+}
+.musicians-demo__player[data-state="playing"] .musicians-demo__play {
+  opacity: 0;
+  pointer-events: none;
+}
+.musicians-demo__caption {
+  margin: 0.6rem 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ink-dim);
+}
+
 /* Tighter vertical rhythm between the mid-page musicians sections. */
 .musicians-ask,
 .musicians-examples,

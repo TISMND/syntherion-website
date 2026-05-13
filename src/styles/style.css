@@ -1239,6 +1239,32 @@ body { padding-bottom: 3.5rem; }
   margin-bottom: 2rem;
 }
 
+.musicians-intro {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
+  max-width: 760px;
+}
+.musicians-intro__lead {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.45;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+.musicians-intro__lead strong {
+  font-weight: 600;
+}
+.musicians-intro__sub {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-dim);
+}
+.musicians-flow .section__heading {
+  text-align: center;
+}
+
 /* Tighter vertical rhythm between the mid-page musicians sections. */
 .musicians-ask,
 .musicians-examples,
@@ -1367,6 +1393,23 @@ body { padding-bottom: 3.5rem; }
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
+}
+.musicians-examples__intro {
+  margin: 0 auto 1.5rem;
+  max-width: 60ch;
+  text-align: left;
+  opacity: 0.9;
+}
+.musicians-examples__intro .spec-value {
+  color: rgb(38, 243, 255);
+  font-weight: 600;
+  opacity: 1;
+}
+.musicians-examples__note {
+  margin: 1.5rem auto 0;
+  max-width: 60ch;
+  text-align: left;
+  opacity: 0.9;
 }
 .musicians-examples__list {
   display: flex;

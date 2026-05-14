@@ -7,23 +7,49 @@ permalink: /for-musicians/
 
 {% include "partials/site-header.njk" %}
 
-<main class="musicians-page">
+<header class="musicians-hero">
+  {% if site.hero.videoUrl %}
+  <video class="musicians-hero__video" autoplay muted loop playsinline poster="{{ site.hero.posterUrl }}">
+    {% if site.hero.mobileVideoUrl %}
+    <source src="{{ site.hero.mobileVideoUrl }}" type="video/mp4" media="(max-width: 720px) and (orientation: portrait)">
+    {% endif %}
+    <source src="{{ site.hero.videoUrl }}" type="video/mp4">
+  </video>
+  {% endif %}
+  <div class="musicians-hero__vignette" aria-hidden="true"></div>
 
-  <header class="musicians-page__header">
-    <h1 class="section__heading">For Musicians</h1>
+  <div class="musicians-hero__content">
+    <p class="musicians-hero__eyebrow">For Musicians</p>
+    <h1 class="visually-hidden">For Musicians</h1>
     <div class="musicians-pitch-box">
       <p class="musicians-pitch-box__lead">
         Get your name, album cover, and Spotify in the game.
       </p>
       <p class="musicians-pitch-box__sub">
-        Write a 16-second synthwave stem to spec. I'll build the weapons around it.
+        All it takes is a 16-second synthwave stem, written to spec.
       </p>
     </div>
-  </header>
+  </div>
+</header>
+
+<main class="musicians-page">
 
   <section class="section musicians-intro">
-    <p class="musicians-intro__lead"><strong>SYNTHERION is a game where weapons and gear sync to music loops.</strong></p>
-    <p class="musicians-intro__sub">Every stem runs at 120 BPM in D# minor, so they all mix with each other.</p>
+    <h2 class="section__heading musicians-intro__heading">How it works</h2>
+    <div class="musicians-intro__grid">
+      <div class="musicians-intro__card">
+        <span class="musicians-intro__eyebrow">The game</span>
+        <p>All weapons and gear sync to synthwave instruments, harmonizing in <span class="spec-value">D# minor</span> at <span class="spec-value">120 BPM</span>.</p>
+      </div>
+      <div class="musicians-intro__card">
+        <span class="musicians-intro__eyebrow">What I need</span>
+        <p>A short original stem, written to that spec (way less work than a full soundtrack track).</p>
+      </div>
+      <div class="musicians-intro__card">
+        <span class="musicians-intro__eyebrow">What you get</span>
+        <p>Your name, art, and Spotify link on screen every time a player finds your work.</p>
+      </div>
+    </div>
   </section>
 
   <section class="section musicians-flow">
@@ -57,8 +83,8 @@ permalink: /for-musicians/
         </div>
         <div class="flow-step__body">
           <span class="flow-step__num">02</span>
-          <h3>It lives in their cargo</h3>
-          <p>Sitting in the inventory between runs, branded with your album art.</p>
+          <h3>It rides with them</h3>
+          <p>Your album art is in their loadout. Every stem follows the same spec, so yours mixes live with whatever else they're carrying. A player can stack yours with the rest, or search the galaxy for a full kit of yours.</p>
         </div>
       </li>
 
@@ -108,8 +134,8 @@ permalink: /for-musicians/
 
   <section class="section musicians-examples">
     <h2 class="section__heading">Try it in your DAW</h2>
-    <p class="musicians-examples__intro">Every stem must match: <span class="spec-value">120 BPM</span>, <span class="spec-value">D# Minor</span>, <span class="spec-value">16 seconds</span>, looping seamlessly. Each stem is one isolated instrument. The game pulls submissions apart and recombines them with other artists' work.</p>
-    <p class="musicians-examples__intro">Drop one of these reference stacks into a session with your own stems to hear how they sit next to the rest of the game.</p>
+    <p class="musicians-examples__intro">The spec is tight (<span class="spec-value">120 BPM</span>, <span class="spec-value">D# Minor</span>, <span class="spec-value">16 seconds</span>, looping seamlessly), one isolated instrument per stem.</p>
+    <p class="musicians-examples__intro">Drop one of these reference stacks into your DAW and write over the top, to hear how yours would sit in the mix.</p>
     <div class="musicians-examples__list">
       <a class="musicians-example"
          href="https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/thin_addition_stems.zip"
@@ -124,7 +150,7 @@ permalink: /for-musicians/
         <span class="musicians-example__meta">ZIP · ~25 MB</span>
       </a>
     </div>
-    <p class="musicians-examples__note">Existing tracks almost never match (120 BPM in D# minor is a specific combo). Expect to write something fresh — even one instrument, 4 bars, looped to 16 seconds, is enough.</p>
+    <p class="musicians-examples__note">Even one instrument, 4 bars, looped out to 16 seconds, is enough to send.</p>
   </section>
 
   <section class="section musicians-cta">
@@ -141,6 +167,7 @@ permalink: /for-musicians/
   <section class="section musicians-tech">
     <h2 class="section__heading musicians-tech__heading">Technical details</h2>
     <ul class="musicians-tech__list">
+      <li>Original material, written to the spec (existing tracks almost never line up with 120 BPM in D# minor).</li>
       <li>Stems, delivered as a ZIP.</li>
       <li>One isolated instrument per stem.</li>
       <li>44.1 kHz WAV.</li>

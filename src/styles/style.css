@@ -1185,6 +1185,46 @@ body { padding-bottom: 3.5rem; }
   text-align: center;
 }
 
+.musicians-hero {
+  position: relative;
+  min-height: clamp(420px, 70vh, 720px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 4.5rem 1.25rem 3.5rem;
+  background: linear-gradient(180deg, #1a0540 0%, #3a0a5e 55%, #0a0420 100%);
+}
+.musicians-hero__video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  filter: saturate(1.3) contrast(1.05);
+  z-index: -2;
+}
+.musicians-hero__vignette {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse at center, transparent 30%, rgba(10, 4, 32, 0.92) 100%),
+    linear-gradient(180deg, rgba(10, 4, 32, 0.35) 0%, transparent 18%, transparent 80%, rgba(10, 4, 32, 0.6) 100%);
+}
+.musicians-hero__content {
+  width: 100%;
+  max-width: 760px;
+  text-align: center;
+  position: relative;
+}
+.musicians-hero__eyebrow {
+  margin: 0 0 1.4rem;
+  font-family: "Orbitron", "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-shadow: 0 0 12px rgba(38, 243, 255, 0.55);
+}
+
 .musicians-pitch-box {
   max-width: 760px;
   margin: 0 auto;
@@ -1242,24 +1282,55 @@ body { padding-bottom: 3.5rem; }
 .musicians-intro {
   padding-top: 2rem;
   padding-bottom: 2.5rem;
+  max-width: var(--max);
+}
+.musicians-intro__heading {
   text-align: center;
-  max-width: 760px;
+  margin-bottom: 2rem;
 }
-.musicians-intro__lead {
-  margin: 0 0 0.6rem;
-  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-  line-height: 1.45;
-  color: var(--ink);
-  letter-spacing: 0.01em;
+.musicians-intro__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1040px;
+  margin: 0 auto;
 }
-.musicians-intro__lead strong {
+.musicians-intro__card {
+  position: relative;
+  padding: 1.5rem 1.35rem 1.6rem;
+  border: 1px solid rgba(38, 243, 255, 0.16);
+  background: linear-gradient(180deg, rgba(34, 12, 78, 0.4), rgba(10, 4, 32, 0.6));
+}
+.musicians-intro__card::before {
+  content: "";
+  position: absolute; top: -1px; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--magenta), transparent);
+  opacity: 0.75;
+}
+.musicians-intro__eyebrow {
+  display: block;
+  font-family: "Orbitron", "Space Grotesk", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 10px rgba(38, 243, 255, 0.35);
+}
+.musicians-intro__card p {
+  margin: 0;
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.musicians-intro__card .spec-value {
+  color: var(--cyan);
   font-weight: 600;
 }
-.musicians-intro__sub {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--ink-dim);
+@media (max-width: 720px) {
+  .musicians-intro__grid {
+    grid-template-columns: 1fr;
+  }
 }
 .musicians-flow .section__heading {
   text-align: center;

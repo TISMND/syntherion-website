@@ -9,10 +9,10 @@ module.exports = {
     discordInvite: "https://discord.gg/HdbhtS3hsg"
   },
   hero: {
-    videoUrl: "https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/web-hero-banner.mp4",
-    mobileVideoUrl: "https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/mobile-hero-banner.mp4",
+    videoUrl: "https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/web_hero_banner_2.mp4",
+    mobileVideoUrl: "https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/web_hero_banner_2.mp4",
     posterUrl: "/assets/hero/poster.jpg",
-    youtubeTrailerId: "l-K-rIV-YDU"
+    youtubeTrailerId: "VtVFdettl5g"
   },
   buttondown: {
     formAction: ""                      // ASK TIM (Task 9)

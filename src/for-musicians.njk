@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: For Musicians
-description: "Adapt a few bars of your music into a synthwave loop for SYNTHERION and get a weapon named after you, branded with your album art, and linked to your music in-game."
+description: "Send an 8 bar slice of stems from one of your songs and get your own spot in the SYNTHERION cosmos: your name, album art, and Spotify in-game, plus a video showcasing your work."
 permalink: /for-musicians/
 ogImage: /assets/og/for-musicians.jpg
 ---
@@ -24,10 +24,10 @@ ogImage: /assets/og/for-musicians.jpg
     <h1 class="visually-hidden">For Musicians</h1>
     <div class="musicians-pitch-box">
       <p class="musicians-pitch-box__lead">
-        Get your name, album cover, and Spotify in the game.
+        Get your name, album art, and Spotify in the game, plus a video showcasing your music.
       </p>
       <p class="musicians-pitch-box__sub">
-        All it takes is 4 or 8 bars of your own music, retuned to D# minor at 120 BPM.
+        All it takes is an 8 bar slice of stems from one of your songs.
       </p>
     </div>
   </div>
@@ -40,137 +40,62 @@ ogImage: /assets/og/for-musicians.jpg
     <div class="musicians-intro__grid">
       <div class="musicians-intro__card">
         <span class="musicians-intro__eyebrow">The game</span>
-        <p>A pew-pew roguelite where all weapons and gear sync to musical instruments.</p>
+        <p>A pew-pew roguelite where all levels sync to synthwave and darksynth music.</p>
       </div>
       <div class="musicians-intro__card">
         <span class="musicians-intro__eyebrow">What to send</span>
-        <p>A <span class="spec-value">4 or 8 bar</span> slice of your existing music, nudged into <span class="spec-value">D# minor</span> at <span class="spec-value">120 BPM</span>.</p>
+        <p>An <span class="spec-value">8 bar</span> slice of stems for one of your songs.</p>
       </div>
       <div class="musicians-intro__card">
         <span class="musicians-intro__eyebrow">What you get</span>
-        <p>Your name, art, and Spotify link on screen every time a player finds your work.</p>
+        <p>Your name, art, and Spotify link in-game. Plus a flashy video showcasing your music.</p>
       </div>
     </div>
   </section>
 
-  <section class="section musicians-flow">
+  <section class="section musicians-trailer-link">
+    <p><a href="/#trailer">Watch the trailer to see music in action →</a></p>
+  </section>
+
+  <section class="section musicians-showcase">
     <h2 class="section__heading">What players see</h2>
-    <ol class="flow-steps">
-
-      <li class="flow-step flow-step--center">
-        <div class="flow-step__media-col">
-          <div class="flow-step__media">
-            <video autoplay muted loop playsinline preload="metadata"
-                   aria-hidden="true">
-              <source src="/assets/artist-promotion/artist_item_drop.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="flow-step__body">
-          <span class="flow-step__num">01</span>
-          <h3>Your weapon drops</h3>
-          <p>A player cracks open a loot crate. Out drops a weapon: your name on it, one of your stems loaded into it.</p>
-        </div>
-      </li>
-
-      <li class="flow-step flow-step--left">
-        <div class="flow-step__media-col">
-          <div class="flow-step__media">
-            <video autoplay muted loop playsinline preload="metadata"
-                   aria-hidden="true">
-              <source src="/assets/artist-promotion/artist_in_inventory.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="flow-step__body">
-          <span class="flow-step__num">02</span>
-          <h3>It rides with them</h3>
-          <p>Each weapon is a single instrument from you. Your art sits next to the new loot's stats, and your stem plays seamlessly with whatever the player is already running. Players might mix-and-match stems, or try hunting down the complete set from your track.</p>
-        </div>
-      </li>
-
-      <li class="flow-step flow-step--close-up">
-        <div class="flow-step__media-col">
-          <div class="flow-step__media">
-            <video autoplay muted loop playsinline preload="metadata"
-                   aria-hidden="true">
-              <source src="/assets/artist-promotion/artist_inventory_close_up.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="flow-step__body">
-          <span class="flow-step__num">03</span>
-          <h3>One tap to your Spotify</h3>
-          <p>The tile links straight to your Spotify, YouTube, or other platform. If a player likes the loop, the rest of your work is one tap away.</p>
-        </div>
-      </li>
-
-    </ol>
-  </section>
-
-  <section class="section musicians-demo-section">
-    <h2 class="section__heading">Hear a loop in action</h2>
-    <figure class="musicians-demo">
-      <div class="musicians-demo__player" data-state="idle">
-        <video class="musicians-demo__video" controls playsinline preload="metadata">
-          <source src="https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/music_sync_demo.mp4" type="video/mp4">
-        </video>
-        <button class="musicians-demo__play" type="button" aria-label="Play demo with sound">
-          <span class="musicians-demo__play-icon" aria-hidden="true"></span>
-        </button>
-      </div>
-      <figcaption class="musicians-demo__caption">Hit play with sound on.</figcaption>
-    </figure>
-    <script>
-      (function () {
-        var wrap = document.currentScript.previousElementSibling.querySelector('.musicians-demo__player');
-        if (!wrap) return;
-        var video = wrap.querySelector('video');
-        var btn = wrap.querySelector('.musicians-demo__play');
-        btn.addEventListener('click', function () { video.play(); });
-        video.addEventListener('play', function () { wrap.setAttribute('data-state', 'playing'); });
-      })();
-    </script>
-  </section>
-
-  <section class="section musicians-examples">
-    <h2 class="section__heading">Try it in your DAW</h2>
-    <p class="musicians-examples__intro">Your bars need to land on spec: <span class="spec-value">120 BPM</span>, <span class="spec-value">D# Minor</span>, <span class="spec-value">4 or 8 bars</span>, looping seamlessly, one isolated instrument per stem.</p>
-    <p class="musicians-examples__intro">Drop one of these reference stacks into your DAW and lay your retuned bars over the top, to hear how yours would sit in the mix.</p>
-    <div class="musicians-examples__list">
-      <a class="musicians-example"
-         href="https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/thin_addition_stems.zip"
-         download>
-        <span class="musicians-example__label">Reference stack 1</span>
-        <span class="musicians-example__meta">ZIP · ~25 MB</span>
-      </a>
-      <a class="musicians-example"
-         href="https://pub-e52e55062eab45daaa777a6bec1f03ca.r2.dev/blazed_sneakers_stems.zip"
-         download>
-        <span class="musicians-example__label">Reference stack 2</span>
-        <span class="musicians-example__meta">ZIP · ~25 MB</span>
-      </a>
+    <div class="musicians-showcase__media">
+      <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="/assets/artist-promotion/featured_artist_map.mp4" type="video/mp4">
+      </video>
     </div>
-    <p class="musicians-examples__note">Even one instrument, just 4 bars of your own, is enough to send.</p>
+    <p class="musicians-showcase__caption">
+      Your track gets its own spot in the cosmos. Players who land on it meet a panel with your name, album art, song title, and a one-tap link to your Spotify.
+    </p>
+    <p class="musicians-footage-note">Early development footage. Visuals will evolve.</p>
+  </section>
+
+  <section class="section musicians-social">
+    <div class="musicians-social__grid">
+      <div class="musicians-social__media">
+        <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="/assets/artist-promotion/artist_social_short.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="musicians-social__body">
+        <h2 class="section__heading musicians-social__heading">What you'll receive</h2>
+        <p>A post showcasing your work in-game, plus your own copy of the video if you would like to post direct from your own social accounts.</p>
+      </div>
+    </div>
   </section>
 
   <section class="section musicians-cta">
     <h2 class="section__heading">Interested?</h2>
-    <p>
-      Help promote the game in whatever way feels natural (a tweet, a story, a word to friends in the scene). Not already in touch? Find Tim on the Discord.
-    </p>
-    <p>
-      Acceptance into the game isn't guaranteed, but credit for any used work is.
-    </p>
-    <a class="btn--discord" href="{{ site.social.discordInvite }}" rel="noopener">Join the Discord →</a>
+    <a class="btn--discord" href="{{ site.social.discordInvite }}" rel="noopener">Find Tim on the Discord →</a>
   </section>
 
   <section class="section musicians-tech">
     <h2 class="section__heading musicians-tech__heading">Technical details</h2>
     <ul class="musicians-tech__list">
-      <li>A short section of your own music, adjusted so it lands at 120 BPM in D# minor (it almost certainly isn't there already, that's the work).</li>
+      <li>An 8 bar slice of your own music.</li>
       <li>Stems, delivered as a ZIP.</li>
-      <li>One isolated instrument per stem (each becomes its own weapon, so a bounced mix won't work).</li>
+      <li>One isolated instrument per stem.</li>
+      {# ASK TIM: under the new "levels sync to music" system, does each stem still become its own weapon? The old copy read "One isolated instrument per stem (each becomes its own weapon, so a bounced mix won't work)." I dropped the parenthetical since the mechanic framing changed — restore or reword if it still holds. #}
       <li>44.1 kHz WAV.</li>
       <li>Submit as many stems as you'd like.</li>
     </ul>

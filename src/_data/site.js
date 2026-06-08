@@ -5,7 +5,7 @@ module.exports = {
   url: "https://syntheriongame.com",
   author: "Tim Attewell",
   social: {
-    steamWishlist: "https://store.steampowered.com/app/4622980/Syntherion/",
+    steamWishlist: "https://store.steampowered.com/app/4622980/Syntherion/?utm_source=syntheriongame.com&utm_medium=referral&utm_campaign=website",
     discordInvite: "https://discord.gg/HdbhtS3hsg"
   },
   hero: {

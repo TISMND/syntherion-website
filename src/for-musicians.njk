@@ -53,9 +53,6 @@ ogImage: /assets/og/for-musicians-v2.jpg
     </div>
   </section>
 
-  <section class="section musicians-trailer-link">
-    <p><a href="/#trailer">Watch the trailer to see music in action →</a></p>
-  </section>
 
   <section class="section musicians-showcase">
     <h2 class="section__heading">What players see</h2>
@@ -84,21 +81,13 @@ ogImage: /assets/og/for-musicians-v2.jpg
     </div>
   </section>
 
-  <section class="section musicians-cta">
-    <h2 class="section__heading">Interested?</h2>
-    <a class="btn--discord" href="{{ site.social.discordInvite }}" rel="noopener">Find Tim on the Discord →</a>
-  </section>
-
-  <section class="section musicians-tech">
-    <h2 class="section__heading musicians-tech__heading">Technical details</h2>
-    <ul class="musicians-tech__list">
-      <li>An 8 bar slice of your own music.</li>
-      <li>Stems, delivered as a ZIP.</li>
-      <li>One isolated instrument per stem.</li>
-      {# ASK TIM: under the new "levels sync to music" system, does each stem still become its own weapon? The old copy read "One isolated instrument per stem (each becomes its own weapon, so a bounced mix won't work)." I dropped the parenthetical since the mechanic framing changed — restore or reword if it still holds. #}
-      <li>44.1 kHz WAV.</li>
-      <li>Submit as many stems as you'd like.</li>
-    </ul>
+  <section class="section musicians-cta-panel">
+    <div class="musicians-cta-panel__box">
+      <h2 class="section__heading musicians-cta-panel__heading">Interested?</h2>
+      <a class="btn--discord" href="{{ site.social.discordInvite }}" rel="noopener">Find Tim on the Discord →</a>
+      <div class="musicians-cta-panel__divider" aria-hidden="true"></div>
+      <p class="musicians-cta-panel__trailer"><a href="/#trailer">Watch the trailer to see music in action →</a></p>
+    </div>
   </section>
 
 </main>

@@ -1,7 +1,7 @@
 module.exports = {
   title: "SYNTHERION",
   tagline: "Harness the Music.",
-  description: "A synthwave vertical shooter where every weapon is an audio loop. Built solo in Godot.",
+  description: "A rhythm shooter built around real tracks by real artists. Pilot your ship, hit the beat, earn the powerups.",
   url: "https://syntheriongame.com",
   author: "Tim Attewell",
   social: {

@@ -1565,6 +1565,81 @@ body { padding-bottom: 3.5rem; }
   text-shadow: 0 0 12px rgba(38, 243, 255, 0.6);
 }
 
+.musicians-faq {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.musicians-faq__heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.musicians-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.musicians-faq__item {
+  position: relative;
+  border: 1px solid rgba(38, 243, 255, 0.16);
+  background: linear-gradient(180deg, rgba(34, 12, 78, 0.4), rgba(10, 4, 32, 0.6));
+}
+.musicians-faq__item::before {
+  content: "";
+  position: absolute; top: -1px; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--magenta), transparent);
+  opacity: 0.6;
+}
+.musicians-faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.35rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+.musicians-faq__q::-webkit-details-marker { display: none; }
+.musicians-faq__q::after {
+  content: "+";
+  flex: none;
+  font-family: "Orbitron", "Space Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--cyan);
+  text-shadow: 0 0 10px rgba(38, 243, 255, 0.4);
+  transition: transform 0.2s ease;
+}
+.musicians-faq__item[open] > .musicians-faq__q::after {
+  transform: rotate(45deg);
+}
+.musicians-faq__q:hover {
+  color: var(--cyan);
+}
+.musicians-faq__a {
+  padding: 0 1.35rem 1.25rem;
+}
+.musicians-faq__a p {
+  margin: 0;
+  color: var(--ink-dim);
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+.musicians-faq__a a {
+  color: var(--cyan);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(38, 243, 255, 0.4);
+}
+.musicians-faq__a a:hover {
+  border-bottom-color: var(--cyan);
+}
+
 .musicians-examples {
   text-align: center;
   max-width: 720px;
